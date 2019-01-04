@@ -6,6 +6,16 @@ spring:
     password:
     type: com.alibaba.druid.pool.DruidDataSource
 
+  thymeleaf:
+      cache: false
+      check-template: true
+      check-template-location: true
+      prefix: classpath:/templates/
+      suffix: .html
+      encoding: UTF-8
+      content-type: text/html
+      mode: HTML5
+
   mybatis-plus:
     mapper-locations: com/mysprb/mysprb/mappers/*.xml
     type-aliases-package: com.mysprb.mysprb.domain

@@ -93,6 +93,19 @@
 			<version>1.0.26</version>
 		</dependency>
 
+		<!-- websocket -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+			<version>1.3.5.RELEASE</version>
+		</dependency>
+
+		<!-- Compile -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
 
 	</dependencies>
 
