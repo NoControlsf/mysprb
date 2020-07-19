@@ -15,7 +15,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = MysprbApplication.class)
+//@SpringBootTest(classes = MysprbApplication.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class AuthorDaoTestMybatis {
     @Autowired
     private AuthorMapper mapper;
@@ -32,7 +33,7 @@ public class AuthorDaoTestMybatis {
 
     @Test
     public void testMybatisQuery(){
-        Author author = mapper.queryById(1L);
+        Author author = mapper.queryById(2L);
         assertNotNull(author);
         System.out.println(author.toString());
     }

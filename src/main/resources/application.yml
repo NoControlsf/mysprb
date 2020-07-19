@@ -13,9 +13,29 @@ spring:
       prefix: classpath:/templates/
       suffix: .html
       encoding: UTF-8
-      content-type: text/html
       mode: HTML5
+      servlet:
+        content-type: text/html
 
   mybatis-plus:
     mapper-locations: com/mysprb/mysprb/mappers/*.xml
     type-aliases-package: com.mysprb.mysprb.domain
+
+
+
+#测试访问配置文件
+mybean:
+  main-name: 中二拯救世界
+  id: 11111
+  flag: false
+  birthday: 2020/7/19
+  map:
+    ss: 魔王
+    skill: 魔王幻影弹
+  list:
+    - p1
+    - p2
+    - p3
+  p:
+    name: 义彦
+    age: 18
