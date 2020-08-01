@@ -1,3 +1,4 @@
+
 spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/myapp?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
@@ -5,6 +6,58 @@ spring:
     username: root
     password:
     type: com.alibaba.druid.pool.DruidDataSource
+
+
+    #初始化大小
+    initialSize: 5
+    #最小值
+    minIdle: 5
+    #最大值
+    maxActive: 20
+    #最大等待时间，配置获取连接等待超时，时间单位都是毫秒ms
+    maxWait: 60000
+    #配置间隔多久才进行一次检测，检测需要关闭的空闲连接
+    timeBetweenEvictionRunsMillis: 60000
+    #配置一个连接在池中最小生存的时间
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，
+    #'wall'用于防火墙，SpringBoot中没有log4j，我改成了log4j2
+    filters: stat,wall,log4j2
+    #最大PSCache连接
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+    # 配置StatFilter
+    web-stat-filter:
+      #默认为false，设置为true启动
+      enabled: true
+      url-pattern: "/*"
+      exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+    #配置StatViewServlet
+    stat-view-servlet:
+      url-pattern: "/druid/*"
+      #允许那些ip
+      allow: 127.0.0.1
+      login-username: admin
+      login-password: 123456
+      #禁止那些ip
+      deny: 192.168.1.102
+      #是否可以重置
+      reset-enable: true
+      #启用
+      enabled: true
+    #运行sql脚本
+    #hikari:
+      #schema:
+        #- classpath: sql/createtable.sql
+
+
 
   thymeleaf:
       cache: false
@@ -21,7 +74,37 @@ spring:
     mapper-locations: com/mysprb/mysprb/mappers/*.xml
     type-aliases-package: com.mysprb.mysprb.domain
 
+  #激活版本
+  #profiles:
+    #active: dev
 
+  #编码
+#  http:
+#    encoding:
+#      charset: utf-8
+#      force: false
+#      enabled: true
+#logging:
+#  #日志输出级别
+#  #level: trace
+#  #日志路径
+#  #file: mysprb.log
+#  #日志路径目录
+#  path: D:\log
+#  pattern:
+#    #在控制台输出日志格式
+#    console: '%d{yyyy-MM-dd hh:mm:ss} [%thread] %-5level %logger{50} - %msg%n'
+#    #在文件中输出日志格式
+#    file: '%d{yyyy-MM-dd} === [%thread] === %-5level === %logger{50} === - %msg%n'
+
+
+#是否开启Springboot的debug  可查看自动配置生效文件（Positive matches）   没有匹配上的（Negative matches）
+#debug: true
+
+server:
+  port: 8080
+  #配置项目的访问路径  原本 localhost:8080     现在：localhost:8080/zhongerbing
+  #content-path: /zhongerbing
 
 #测试访问配置文件
 #mybean:
@@ -40,4 +123,15 @@ spring:
 #    name: 义彦
 #    age: 18
 
+#---文档块
+---
+server:
+  port: 8081
+spring:
+  profiles: dev
 
+---
+server:
+  port: 8082
+spring:
+  profiles: prod

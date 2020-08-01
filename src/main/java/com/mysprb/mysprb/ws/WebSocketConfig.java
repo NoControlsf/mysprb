@@ -13,7 +13,7 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 @Configuration
 public class WebSocketConfig {
     //将方法的返回值添加到容器中：容器中这个组件的默认id为方法名
-    @Bean
+    @Bean //给容器中添加一个组件
     public ServerEndpointExporter serverEndpointExporter(){
         return new ServerEndpointExporter();
     }

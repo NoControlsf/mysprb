@@ -12,6 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.sql.DataSource;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -44,6 +49,17 @@ public class AuthorDaoTestMybatis {
         author.setNickName("月儿");
         author.setRealName("林月如");
         mapper.updateAuthor(author);
+    }
+
+    @Autowired
+    DataSource dataSource;
+    @Test
+    public void contextLoads() throws SQLException {
+        System.out.println(dataSource.getClass());
+
+        Connection connection = dataSource.getConnection();
+        System.out.println(connection);
+        connection.close();
     }
 
 }

@@ -51,6 +51,11 @@
 		</dependency>
 
 
+		<!-- 引入druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+		</dependency>
 
 		<!-- 分页插件 -->
 		<dependency>
