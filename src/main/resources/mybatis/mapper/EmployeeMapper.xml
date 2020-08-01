@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mysprb.mysprb.mappers.EmployeeMapper">
+
+    <insert id="insertEmp">
+        INSERT INTO
+        employee(
+        lastName, email, gender, d_id
+        )
+        VALUE
+        (#{lastName}, #{email}, #{gender}, #{dId})
+    </insert>
+
+    <select id="getEmpById" resultType="com.mysprb.mysprb.bean.Employee">
+        SELECT * FROM employee WHERE id = #{id}
+    </select>
+
+
+
+</mapper>
