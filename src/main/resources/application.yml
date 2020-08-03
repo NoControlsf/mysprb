@@ -63,6 +63,12 @@ spring:
       #schema:
         #- classpath: sql/createtable.sql
 
+  jpa:
+    hibernate:
+      # 更新或创建数据表结构
+      ddl-auto: update
+    # 控制台显示sql
+    show-sql: true
 
 
   thymeleaf:

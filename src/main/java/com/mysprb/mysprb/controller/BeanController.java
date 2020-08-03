@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class BeanController {
     @RequestMapping("/getMyBean")
     public Object getMyBean(){
-
-
-
         return "";
     }
 }
