@@ -8,4 +8,8 @@ public interface EmployeeMapper {
     public Employee getEmpById(int id);
 
     public void insertEmp(Employee employee);
+
+    public int updateEmp(Employee employee);
+
+    public int deleteEmpById(int id);
 }
