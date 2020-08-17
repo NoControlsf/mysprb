@@ -82,7 +82,7 @@ public class CacheService {
     // @Cacheable(cacheNames = "emp", key = "#root.args[0]")
     // @Cacheable(cacheNames = {"emp","temp"}, key = "#id")
     // @Cacheable(cacheNames = {"emp","temp"}, condition = "#id > 0", unless = "#result == null")
-    @Cacheable(cacheNames = "emp")
+    @Cacheable(cacheNames = "emp", unless = "#result == null")
     public Employee getEmp(int id){
         System.out.println("查询" + id + "号员工");
         return  employeeMapper.getEmpById(id);
