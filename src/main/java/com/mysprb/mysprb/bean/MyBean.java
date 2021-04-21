@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 
 //加载指定的配置文件,不支持yml
-@PropertySource(value = {"classpath:MyConf.properties"})
+//@PropertySource(value = {"classpath:MyConf.properties"})
 //必须在容器中 加上Component
 @Component
 @ConfigurationProperties(prefix = "mybean")
