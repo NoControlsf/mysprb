@@ -128,6 +128,13 @@ logging:
 #是否开启Springboot的debug  可查看自动配置生效文件（Positive matches）   没有匹配上的（Negative matches）
 #debug: true
 
+#feign 加密
+encrypt:
+  urls:
+#feign 访问IP
+my:
+  host:
+
 server:
   port: 8080
   #配置项目的访问路径  原本 localhost:8080     现在：localhost:8080/zhongerbing
