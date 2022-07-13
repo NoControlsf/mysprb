@@ -3,14 +3,9 @@ spring:
   datasource:
     #本地
     url: jdbc:mysql://127.0.0.1:3306/myapp?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
-    #服务器
-    #url: jdbc:mysql://129.28.70.201:3306/myapp?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
-    #本地
     password: root
-    #服务器
-    #password:
     type: com.alibaba.druid.pool.DruidDataSource
 
 
